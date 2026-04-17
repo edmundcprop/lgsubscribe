@@ -1,0 +1,175 @@
+{
+  "valueProps": [
+    {
+      "titleEn": "Zero upfront cost",
+      "titleMs": "Tiada kos pendahuluan",
+      "bodyEn": "No deposit, no lump sum. Your card's credit limit isn't blocked.",
+      "bodyMs": "Tiada deposit, tiada bayaran sekaligus. Had kredit kad anda tidak disekat."
+    },
+    {
+      "titleEn": "Free delivery & install",
+      "titleMs": "Penghantaran & pemasangan percuma",
+      "bodyEn": "Nationwide delivery and professional installation by LG technicians, bundled in.",
+      "bodyMs": "Penghantaran seluruh negara dan pemasangan profesional oleh juruteknik LG — disertakan."
+    },
+    {
+      "titleEn": "Care for the full term",
+      "titleMs": "Penjagaan sepanjang tempoh",
+      "bodyEn": "Warranty, filter replacements and scheduled maintenance run for the entire 60 or 84 months.",
+      "bodyMs": "Waranti, penggantian penapis dan penyelenggaraan berjadual untuk sepanjang tempoh 60 atau 84 bulan."
+    },
+    {
+      "titleEn": "Flexible plans",
+      "titleMs": "Pelan fleksibel",
+      "bodyEn": "60 or 84-month subscriptions. Outright purchase available on selected products.",
+      "bodyMs": "Langganan 60 atau 84 bulan. Pembelian tunai tersedia untuk produk terpilih."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Baru pindah rumah baru, bajet dah ketat. LG Subscribe bagi kami pasang peti sejuk, mesin basuh dan TV sekaligus — bayar bulanan je, tak perlu keluar duit besar.",
+      "name": "Amirah & Hafiz",
+      "location": "Setia Alam, Shah Alam",
+      "products": "InstaView Refrigerator · WashTower · OLED TV"
+    },
+    {
+      "quote": "Aircond lama rosak masa tengah renovate. Dalam seminggu dah pasang DUAL Inverter baru — pelan 60 bulan, tak sentuh savings langsung.",
+      "name": "Danial",
+      "location": "Petaling Jaya",
+      "products": "1.5HP DUAL Inverter Aircond"
+    },
+    {
+      "quote": "Kami nak air bersih untuk anak-anak tapi tak mahu beli terus. ATOM-V pelan 7 tahun lebih murah dari beli air botol tiap bulan.",
+      "name": "Syafiqah & Razlan",
+      "location": "Subang Jaya",
+      "products": "PuriCare ATOM-V Water Purifier"
+    },
+    {
+      "quote": "Moved into our first condo with zero appliance budget left. LG Subscribe covered the whole kitchen — fridge, dishwasher and microwave — for under RM400 a month.",
+      "name": "Jason & Mei Ling",
+      "location": "Mont Kiara, KL",
+      "products": "612L Fridge · Dishwasher · NeoChef Microwave"
+    },
+    {
+      "quote": "Kucing kami ada masalah bulu. AeroCatTower bersihkan udara dan jadi tempat kucing tidur sekali — dua dalam satu. Best decision.",
+      "name": "Farah",
+      "location": "Bangsar South, KL",
+      "products": "PuriCare AeroCatTower"
+    },
+    {
+      "quote": "We renovated our terrace and needed everything at once — aircond, water purifier, washer. One WhatsApp chat, semua settle dalam satu pelan.",
+      "name": "Vikram & Priya",
+      "location": "Bukit Jalil, KL",
+      "products": "2.0HP Aircond · ATOM-U · 10.5kg Washer"
+    },
+    {
+      "quote": "Styler tu memang game changer. Baju kerja segar balik dalam 20 minit, tak payah iron. Jimat masa pagi sebelum ke office.",
+      "name": "Aisyah",
+      "location": "Cyberjaya",
+      "products": "LG Styler S3WF"
+    },
+    {
+      "quote": "Our old top-loader finally gave up. Upgraded to the WashTower — washer and dryer in one tower, saves so much space in our apartment laundry area.",
+      "name": "Marcus & Sarah",
+      "location": "Ara Damansara",
+      "products": "14/10kg WashTower"
+    },
+    {
+      "quote": "Dehumidifier ni senyap gila, boleh tidur dengan selesa. Bilik tak lembap dah, baju kering lagi cepat masa musim hujan.",
+      "name": "Zulkifli",
+      "location": "Johor Bahru",
+      "products": "PuriCare 16L Dehumidifier"
+    }
+  ],
+  "scenarios": [
+    {
+      "labelEn": "New Home",
+      "labelMs": "Rumah Baru",
+      "titleEn": "Moving into your first home?",
+      "titleMs": "Berpindah ke rumah pertama anda?",
+      "bodyEn": "Fill every room with premium LG appliances without touching your renovation budget. Monthly plans keep cash free for the things you really want.",
+      "bodyMs": "Lengkapkan setiap bilik dengan peralatan LG premium tanpa menyentuh bajet pengubahsuaian anda. Pelan bulanan membebaskan tunai untuk barangan yang anda benar-benar inginkan.",
+      "image": "/uploads/1776353241178-section-6.avif"
+    },
+    {
+      "labelEn": "Renovation",
+      "labelMs": "Pengubahsuaian",
+      "titleEn": "Renovating your forever home?",
+      "titleMs": "Mengubah suai rumah idaman anda?",
+      "bodyEn": "Kit out the kitchen, laundry and living room in one plan. Delivery and installation scheduled around your handover date — nothing extra to coordinate.",
+      "bodyMs": "Lengkapkan dapur, bilik dobi dan ruang tamu dalam satu pelan. Penghantaran dan pemasangan dijadualkan mengikut tarikh serahan anda — tiada keperluan untuk menguruskan kontraktor berasingan.",
+      "image": "/uploads/site/cat-air-conditioners-7.avif"
+    },
+    {
+      "labelEn": "Upgrade",
+      "labelMs": "Naik Taraf",
+      "titleEn": "Ready for an upgrade?",
+      "titleMs": "Bersedia untuk naik taraf?",
+      "bodyEn": "Swap your aging washer, fridge or TV for the latest LG — delivered, installed and cared for. Life moves faster than depreciation.",
+      "bodyMs": "Tukar mesin basuh, peti sejuk atau TV lama anda kepada model LG terbaru — dihantar, dipasang dan dijaga. Hidup bergerak lebih pantas daripada susut nilai peralatan.",
+      "image": "/uploads/site/scenario-upgrade-15.avif"
+    }
+  ],
+  "steps": [
+    {
+      "n": "01",
+      "title": "Browse & choose",
+      "body": "Pick a product, a 60 or 84-month term, and the care tier that fits how hands-on you want to be."
+    },
+    {
+      "n": "02",
+      "title": "Submit application",
+      "body": "Send us your details on WhatsApp. Our consultants handle eligibility and walk you through the plan."
+    },
+    {
+      "n": "03",
+      "title": "Register & sign",
+      "body": "Register a credit or debit card for monthly auto-debit and sign digitally. No deposit, no upfront lump sum."
+    },
+    {
+      "n": "04",
+      "title": "LG approves",
+      "body": "A quick credit check, then LG confirms the order and schedules delivery around your availability."
+    },
+    {
+      "n": "05",
+      "title": "Delivery & install",
+      "body": "Free nationwide doorstep delivery. A technician handles installation, commissioning and a walkthrough."
+    },
+    {
+      "n": "06",
+      "title": "Care for the term",
+      "body": "Scheduled maintenance, replacement filters and warranty repairs — all included for the full 60 or 84 months."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is LG Subscribe?",
+      "a": "A monthly subscription that lets you enjoy premium LG appliances without the upfront cost. Delivery, installation and scheduled maintenance are bundled into the plan."
+    },
+    {
+      "q": "Who is eligible?",
+      "a": "Malaysian citizens and permanent residents aged 21 and above with a valid IC and proof of address. Our consultants run a quick check during enquiry."
+    },
+    {
+      "q": "What happens at the end of my term?",
+      "a": "The appliance transfers to you at the end of the contract — LG Subscribe is a rent-to-own arrangement. You can also speak to us about upgrading to a newer LG model. No hidden conditions — we walk through everything before you sign up."
+    },
+    {
+      "q": "Is maintenance really included?",
+      "a": "Yes. Scheduled servicing and priority support are included throughout your subscription, depending on the plan tier you choose."
+    },
+    {
+      "q": "Can I cancel early?",
+      "a": "Early termination is available based on your plan terms. We walk through the details before you sign up — no hidden conditions."
+    }
+  ],
+  "featuredSlugs": [
+    "oled-b5-77",
+    "atom-v-wd518an",
+    "601l-instaview-beige",
+    "objet-washtower-25-20",
+    "puricare-aero-cattower",
+    "artcool-2-5hp-s3q24r"
+  ]
+}

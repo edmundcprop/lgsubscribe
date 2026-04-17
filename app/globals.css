@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Inter Tight", -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+*:focus-visible {
+  outline: 2px solid #A50034;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+body {
+  @apply bg-white text-lg-ink;
+  font-family: var(--font-display);
+  font-feature-settings: "ss01", "cv11";
+}
+
+::selection {
+  background: #A50034;
+  color: white;
+}
+
+@layer components {
+  .container-lg {
+    @apply mx-auto w-full max-w-[1280px] px-6 sm:px-8 lg:px-12;
+  }
+  .container-xl {
+    @apply mx-auto w-full max-w-[1440px] px-6 sm:px-8 lg:px-12;
+  }
+
+  /* Apple-style buttons — pill, subtle */
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-lg-red px-6 py-3 text-[15px] font-medium text-white transition-all duration-200 hover:bg-lg-red-dark;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-1 text-[15px] font-medium text-lg-red transition-colors hover:text-lg-red-dark;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-full border border-lg-ink/15 px-6 py-3 text-[15px] font-medium text-lg-ink transition-all duration-200 hover:border-lg-ink/30 hover:bg-lg-ink/5;
+  }
+  .btn-dark {
+    @apply inline-flex items-center justify-center rounded-full bg-lg-ink px-6 py-3 text-[15px] font-medium text-white transition-all duration-200 hover:bg-lg-graphite;
+  }
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-[15px] font-medium text-white transition-all duration-200 hover:bg-[#1EB954];
+  }
+
+  /* Typography scale — Apple style */
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-lg-red;
+  }
+  .display {
+    @apply text-display font-semibold;
+  }
+  .headline {
+    @apply text-headline font-semibold;
+  }
+  .title {
+    @apply text-title font-semibold;
+  }
+  .lede {
+    @apply text-lg text-lg-stone sm:text-xl;
+  }
+
+  /* Sections */
+  .section {
+    @apply py-24 sm:py-32 lg:py-40;
+  }
+  .section-sm {
+    @apply py-16 sm:py-24 lg:py-28;
+  }
+
+  /* Product card — clean, borderless, focus on image */
+  .product-card {
+    @apply flex flex-col overflow-hidden rounded-[28px] bg-lg-mist transition-all duration-300 hover:-translate-y-1;
+  }
+
+  /* Apple-style nav pill */
+  .nav-link {
+    @apply text-[13px] font-medium text-lg-ink/80 transition-colors hover:text-lg-ink;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
+
+/* Bilingual text toggle — EN by default, MS when <html lang="ms"> */
+html:not([lang="ms"]) [data-lang="ms"] {
+  display: none !important;
+}
+html[lang="ms"] [data-lang="en"] {
+  display: none !important;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "LG Subscribe Malaysia",
+  "tagline": "Own Less. Live More.",
+  "description": "Subscribe to premium LG home appliances in Malaysia from RM60/month. No upfront cost. Free delivery, installation and care service included.",
+  "url": "https://lgsubscribe.co",
+  "locale": "en_MY",
+  "whatsapp": {
+    "number": "60123871728",
+    "display": "+60 12-387 1728"
+  },
+  "contact": {
+    "email": "subscribe@lg.my",
+    "hours": "Mon – Sat, 9:00 AM – 6:00 PM"
+  },
+  "business": {
+    "legalName": "LG Subscribe Malaysia",
+    "streetAddress": "Kuala Lumpur",
+    "city": "Kuala Lumpur",
+    "region": "Wilayah Persekutuan",
+    "postalCode": "50000",
+    "country": "MY",
+    "priceRange": "RM60 – RM560/month"
+  }
+}

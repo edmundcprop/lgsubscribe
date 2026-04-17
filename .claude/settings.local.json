@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "WebFetch(domain:www.lg-puricare.com.my)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(rm -rf .next)",
+      "WebFetch(domain:www.lgpuricare.cc)",
+      "WebFetch(domain:www.lg.com)",
+      "Bash(curl -sL \"https://www.lg-puricare.com.my/water-purifier/\" -A \"Mozilla/5.0\")",
+      "Bash(python3 -c \"import sys,re,html; t=sys.stdin.read\\(\\); t=re.sub\\(r'<script[^>]*>.*?</script>','',t,flags=re.S\\); t=re.sub\\(r'<style[^>]*>.*?</style>','',t,flags=re.S\\); print\\(t\\)\")",
+      "Bash(curl -sL \"https://www.lg-puricare.com.my/portfolio/lg-slim-stand-water-purifier-with-smart-inverter-rm120-month/\" -o /tmp/lg_slim.html)",
+      "Read(//tmp/**)",
+      "Bash(curl -sL -A \"Mozilla/5.0\" \"https://www.lg-puricare.com.my/portfolio/slim-stand-lg-puricare-water-purifier/\" -o /tmp/lg_slim.html)",
+      "Read(//private/tmp/**)",
+      "Bash(python3)",
+      "Bash(node -e ':*)",
+      "Bash(npx tsx -e ':*)",
+      "WebFetch(domain:lgsubscribestore.com.my)",
+      "WebSearch",
+      "Bash(grep -l \"alt=\" components/*.tsx app/**/*.tsx)",
+      "Bash(grep -c 'alt=\"\"' app/page.tsx app/products/**/*.tsx components/*.tsx)",
+      "Bash(ls app/robots* app/sitemap* public/robots* public/sitemap*)",
+      "Bash(grep -l \"application/ld+json\\\\|JSON-LD\" app components)",
+      "Bash(lsof -ti:4000)",
+      "Bash(xargs kill:*)",
+      "Bash(python3 -c ':*)",
+      "Bash(python3 -c \"import json; data=json.load\\(open\\('/Users/edmundchin/LG Subscribe Website/lib/batch3-ms.json'\\)\\); print\\(f'Valid JSON. {len\\(data\\)} products.'\\); [print\\(f'  {k}: features={len\\(v[\\\\\"features\\\\\"]\\)}, sections={len\\(v[\\\\\"sections\\\\\"]\\)}, whatsInBox={len\\(v[\\\\\"whatsInBox\\\\\"]\\)}, faqs={len\\(v[\\\\\"faqs\\\\\"]\\)}'\\) for k,v in data.items\\(\\)]\")",
+      "Bash(cp \"/Users/edmundchin/Downloads/Fav_icon.svg\" \"/Users/edmundchin/LG Subscribe Website/public/favicon.svg\")",
+      "Bash(cp \"/Users/edmundchin/Downloads/LG \\(240 x 64 px\\).svg\" \"/Users/edmundchin/LG Subscribe Website/public/logo.svg\")",
+      "Bash(npx tsc:*)",
+      "Bash(node -e \"require\\('bcryptjs'\\); require\\('jsonwebtoken'\\); console.log\\('deps ok'\\)\")",
+      "WebFetch(domain:www.lg-subscribe.com.my)",
+      "Bash(python3 scripts/download-images.py)",
+      "Bash(node -e ' *)",
+      "Bash(curl -s -X POST http://localhost:4000/api/auth/login/ -H \"Content-Type: application/json\" -d '{\"username\":\"admin\",\"password\":\"lgsubscribe2024\"}')",
+      "Bash(python3 -c ' *)"
+    ]
+  }
+}

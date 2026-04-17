@@ -1,0 +1,88 @@
+[
+  {
+    "slug": "lg-puricare-vs-coway-water-purifier",
+    "title": "LG PuriCare vs Coway: Which Water Purifier Subscription Wins in Malaysia?",
+    "description": "A side-by-side look at LG PuriCare and Coway water purifiers for Malaysian homes — features, service model, and how to choose.",
+    "intro": "The Malaysian water purifier market is dominated by two subscription brands: Coway, the incumbent, and LG PuriCare, the technology-led challenger. Both use a rental-plus-service model, both deliver filtered water to your tap, and both are available nationwide. The differences show up once you look at what sits inside the box and how each company services it.",
+    "leftName": "LG PuriCare (ATOM-V, 4-WARD+, Slim Stand S2)",
+    "leftTagline": "Technology-led tankless purifiers with UVnano, smart app control and a 10-year compressor warranty.",
+    "rightName": "Coway (Neo Plus, Core, Villaem ranges)",
+    "rightTagline": "Market leader with wide dealer network and decades of installed base in Malaysia.",
+    "rows": [
+      {
+        "label": "Service model",
+        "left": "Self-Service or Regular Visit plans — choose lower cost or technician maintenance every 3 months.",
+        "right": "Technician visits every 2 months are the norm across the line-up.",
+        "winner": "tie"
+      },
+      {
+        "label": "Filter technology",
+        "left": "Pre-Carbon Block Plus + Ultra Filtration (4-stage) removing 9 heavy metals and up to 99.99% of norovirus-sized contaminants.",
+        "right": "Multi-stage filtration with proprietary cartridge system across different ranges.",
+        "winner": "left"
+      },
+      {
+        "label": "Smart / connected features",
+        "left": "LG ThinQ app control on most models — monitor filter life, water usage and alerts from your phone.",
+        "right": "Limited smart connectivity across the core lineup.",
+        "winner": "left"
+      },
+      {
+        "label": "Tankless design",
+        "left": "Fully tankless — water is filtered only when dispensed, reducing stagnation risk.",
+        "right": "Mix of tankless and tank-based models depending on range.",
+        "winner": "left"
+      },
+      {
+        "label": "Spout hygiene",
+        "left": "UVnano UV-LED sterilises the outlet for ~10 minutes every hour, automatically.",
+        "right": "Varies by model — generally manual or scheduled cleaning.",
+        "winner": "left"
+      },
+      {
+        "label": "Hot water temperatures",
+        "left": "Three hot presets (40 / 75 / 85 °C) on ATOM-U, ATOM-V and 4-WARD+.",
+        "right": "Typically one or two preset hot water temperatures.",
+        "winner": "left"
+      },
+      {
+        "label": "Compressor warranty",
+        "left": "10-year Smart Inverter Compressor warranty across the line.",
+        "right": "Standard warranty terms — confirm with your Coway representative."
+      },
+      {
+        "label": "Monthly price (entry)",
+        "left": "From RM60/month (MX 7-year plan), RM70/month (ATOM-V 7-year) — Self-Service tiers.",
+        "right": "Typical entry pricing sits in the RM90–RM120/month range depending on model.",
+        "winner": "left"
+      },
+      {
+        "label": "Outright purchase option",
+        "left": "ATOM-V RM3,200, Slim Stand S2 RM3,500, Slim Stand S1 RM5,000 — published.",
+        "right": "Outright prices not typically published; enquiry-led.",
+        "winner": "left"
+      },
+      {
+        "label": "Dealer network",
+        "left": "Growing authorised dealer network including us.",
+        "right": "Very large, long-established network across Malaysia.",
+        "winner": "right"
+      },
+      {
+        "label": "Installed base",
+        "left": "Newer entrant — smaller installed base.",
+        "right": "Millions of Malaysian households.",
+        "winner": "right"
+      },
+      {
+        "label": "Colour options",
+        "left": "Up to 5 colours on ATOM-V Objet Collection; more compact footprint options.",
+        "right": "Generally limited to white and a second finish.",
+        "winner": "left"
+      }
+    ],
+    "conclusion": "If you're comparing these two from scratch in 2026, LG PuriCare wins on hardware — tankless design, UVnano spout sterilisation, smart app control and a 10-year compressor warranty are all meaningful upgrades over the older Coway line. Coway wins on installed base and dealer density, which matters if you live in a rural area or need fast local service. For most Malaysian families in urban and suburban homes, LG PuriCare is the better technical pick at a lower monthly rate — and our dealer team handles service end-to-end, so you get LG hardware plus local support.",
+    "recommendedProductSlug": "atom-v-wd518an",
+    "recommendedProductCategory": "water-purifiers"
+  }
+]
