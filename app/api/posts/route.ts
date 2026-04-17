@@ -1,14 +1,13 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import { readData, writeData } from "@/lib/store";
 
 export const dynamic = "force-dynamic";
 
-const filePath = path.join(process.cwd(), "data/posts.json");
+type Post = { slug: string; title?: string } & Record<string, unknown>;
 
 export async function GET() {
   try {
-    const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+    const data = await readData<Post[]>("posts");
     return NextResponse.json(data);
   } catch {
     return NextResponse.json(
@@ -20,8 +19,8 @@ export async function GET() {
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
-    const posts = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+    const body = (await req.json()) as Post;
+    const posts = await readData<Post[]>("posts");
 
     if (!body.slug && body.title) {
       body.slug = body.title
@@ -31,7 +30,7 @@ export async function POST(req: Request) {
     }
 
     posts.push(body);
-    fs.writeFileSync(filePath, JSON.stringify(posts, null, 2), "utf-8");
+    await writeData("posts", posts);
 
     return NextResponse.json(body, { status: 201 });
   } catch {

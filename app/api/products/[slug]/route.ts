@@ -1,10 +1,9 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import { readData, writeData } from "@/lib/store";
 
 export const dynamic = "force-dynamic";
 
-const filePath = path.join(process.cwd(), "data/products.json");
+type Product = { slug: string } & Record<string, unknown>;
 
 export async function GET(
   _req: Request,
@@ -12,8 +11,8 @@ export async function GET(
 ) {
   try {
     const { slug } = await params;
-    const products = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-    const product = products.find((p: { slug: string }) => p.slug === slug);
+    const products = await readData<Product[]>("products");
+    const product = products.find((p) => p.slug === slug);
 
     if (!product) {
       return NextResponse.json({ error: "Product not found" }, { status: 404 });
@@ -34,16 +33,16 @@ export async function PUT(
 ) {
   try {
     const { slug } = await params;
-    const body = await req.json();
-    const products = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-    const index = products.findIndex((p: { slug: string }) => p.slug === slug);
+    const body = (await req.json()) as Partial<Product>;
+    const products = await readData<Product[]>("products");
+    const index = products.findIndex((p) => p.slug === slug);
 
     if (index === -1) {
       return NextResponse.json({ error: "Product not found" }, { status: 404 });
     }
 
     products[index] = { ...products[index], ...body };
-    fs.writeFileSync(filePath, JSON.stringify(products, null, 2), "utf-8");
+    await writeData("products", products);
 
     return NextResponse.json(products[index]);
   } catch {
@@ -60,15 +59,15 @@ export async function DELETE(
 ) {
   try {
     const { slug } = await params;
-    const products = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-    const index = products.findIndex((p: { slug: string }) => p.slug === slug);
+    const products = await readData<Product[]>("products");
+    const index = products.findIndex((p) => p.slug === slug);
 
     if (index === -1) {
       return NextResponse.json({ error: "Product not found" }, { status: 404 });
     }
 
     const removed = products.splice(index, 1)[0];
-    fs.writeFileSync(filePath, JSON.stringify(products, null, 2), "utf-8");
+    await writeData("products", products);
 
     return NextResponse.json(removed);
   } catch {

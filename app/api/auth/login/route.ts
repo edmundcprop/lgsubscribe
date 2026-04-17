@@ -1,13 +1,17 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
 import { comparePassword, signToken } from "@/lib/auth";
+import { readData } from "@/lib/store";
 
 export const dynamic = "force-dynamic";
 
+type User = { id: string; username: string; password: string; role: string };
+
 export async function POST(req: Request) {
   try {
-    const { username, password } = await req.json();
+    const { username, password } = (await req.json()) as {
+      username?: string;
+      password?: string;
+    };
 
     if (!username || !password) {
       return NextResponse.json(
@@ -16,11 +20,8 @@ export async function POST(req: Request) {
       );
     }
 
-    const filePath = path.join(process.cwd(), "data/users.json");
-    const users = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-    const user = users.find(
-      (u: { username: string }) => u.username === username
-    );
+    const users = await readData<User[]>("users");
+    const user = users.find((u) => u.username === username);
 
     if (!user || !comparePassword(password, user.password)) {
       return NextResponse.json(

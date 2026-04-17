@@ -1,14 +1,13 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import { readData, writeData } from "@/lib/store";
 
 export const dynamic = "force-dynamic";
 
-const filePath = path.join(process.cwd(), "data/site.json");
+type Site = Record<string, unknown>;
 
 export async function GET() {
   try {
-    const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+    const data = await readData<Site>("site");
     return NextResponse.json(data);
   } catch {
     return NextResponse.json(
@@ -20,8 +19,8 @@ export async function GET() {
 
 export async function PUT(req: Request) {
   try {
-    const body = await req.json();
-    fs.writeFileSync(filePath, JSON.stringify(body, null, 2), "utf-8");
+    const body = (await req.json()) as Site;
+    await writeData("site", body);
     return NextResponse.json(body);
   } catch {
     return NextResponse.json(

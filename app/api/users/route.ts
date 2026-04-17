@@ -1,19 +1,20 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
 import { hashPassword } from "@/lib/auth";
+import { readData, writeData } from "@/lib/store";
 
 export const dynamic = "force-dynamic";
 
-const filePath = path.join(process.cwd(), "data/users.json");
+type User = {
+  id: string;
+  username: string;
+  password: string;
+  role: string;
+};
 
 export async function GET() {
   try {
-    const users = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-    const safe = users.map(
-      ({ password: _, ...rest }: { password: string; [key: string]: unknown }) =>
-        rest
-    );
+    const users = await readData<User[]>("users");
+    const safe = users.map(({ password: _password, ...rest }) => rest);
     return NextResponse.json(safe);
   } catch {
     return NextResponse.json(
@@ -25,8 +26,8 @@ export async function GET() {
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
-    const users = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+    const body = (await req.json()) as Partial<User>;
+    const users = await readData<User[]>("users");
 
     if (!body.username || !body.password) {
       return NextResponse.json(
@@ -35,9 +36,7 @@ export async function POST(req: Request) {
       );
     }
 
-    const exists = users.find(
-      (u: { username: string }) => u.username === body.username
-    );
+    const exists = users.find((u) => u.username === body.username);
     if (exists) {
       return NextResponse.json(
         { error: "Username already exists" },
@@ -45,7 +44,7 @@ export async function POST(req: Request) {
       );
     }
 
-    const newUser = {
+    const newUser: User = {
       id: String(Date.now()),
       username: body.username,
       password: hashPassword(body.password),
@@ -53,9 +52,9 @@ export async function POST(req: Request) {
     };
 
     users.push(newUser);
-    fs.writeFileSync(filePath, JSON.stringify(users, null, 2), "utf-8");
+    await writeData("users", users);
 
-    const { password: _, ...safe } = newUser;
+    const { password: _password, ...safe } = newUser;
     return NextResponse.json(safe, { status: 201 });
   } catch {
     return NextResponse.json(
@@ -67,7 +66,7 @@ export async function POST(req: Request) {
 
 export async function DELETE(req: Request) {
   try {
-    const { id } = await req.json();
+    const { id } = (await req.json()) as { id?: string };
 
     if (!id) {
       return NextResponse.json(
@@ -76,17 +75,17 @@ export async function DELETE(req: Request) {
       );
     }
 
-    const users = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-    const index = users.findIndex((u: { id: string }) => u.id === id);
+    const users = await readData<User[]>("users");
+    const index = users.findIndex((u) => u.id === id);
 
     if (index === -1) {
       return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
     const removed = users.splice(index, 1)[0];
-    fs.writeFileSync(filePath, JSON.stringify(users, null, 2), "utf-8");
+    await writeData("users", users);
 
-    const { password: _, ...safe } = removed;
+    const { password: _password, ...safe } = removed;
     return NextResponse.json(safe);
   } catch {
     return NextResponse.json(

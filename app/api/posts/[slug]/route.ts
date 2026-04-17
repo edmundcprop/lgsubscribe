@@ -1,10 +1,9 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import { readData, writeData } from "@/lib/store";
 
 export const dynamic = "force-dynamic";
 
-const filePath = path.join(process.cwd(), "data/posts.json");
+type Post = { slug: string } & Record<string, unknown>;
 
 export async function GET(
   _req: Request,
@@ -12,8 +11,8 @@ export async function GET(
 ) {
   try {
     const { slug } = await params;
-    const posts = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-    const post = posts.find((p: { slug: string }) => p.slug === slug);
+    const posts = await readData<Post[]>("posts");
+    const post = posts.find((p) => p.slug === slug);
 
     if (!post) {
       return NextResponse.json({ error: "Post not found" }, { status: 404 });
@@ -34,16 +33,16 @@ export async function PUT(
 ) {
   try {
     const { slug } = await params;
-    const body = await req.json();
-    const posts = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-    const index = posts.findIndex((p: { slug: string }) => p.slug === slug);
+    const body = (await req.json()) as Partial<Post>;
+    const posts = await readData<Post[]>("posts");
+    const index = posts.findIndex((p) => p.slug === slug);
 
     if (index === -1) {
       return NextResponse.json({ error: "Post not found" }, { status: 404 });
     }
 
     posts[index] = { ...posts[index], ...body };
-    fs.writeFileSync(filePath, JSON.stringify(posts, null, 2), "utf-8");
+    await writeData("posts", posts);
 
     return NextResponse.json(posts[index]);
   } catch {
@@ -60,15 +59,15 @@ export async function DELETE(
 ) {
   try {
     const { slug } = await params;
-    const posts = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-    const index = posts.findIndex((p: { slug: string }) => p.slug === slug);
+    const posts = await readData<Post[]>("posts");
+    const index = posts.findIndex((p) => p.slug === slug);
 
     if (index === -1) {
       return NextResponse.json({ error: "Post not found" }, { status: 404 });
     }
 
     const removed = posts.splice(index, 1)[0];
-    fs.writeFileSync(filePath, JSON.stringify(posts, null, 2), "utf-8");
+    await writeData("posts", posts);
 
     return NextResponse.json(removed);
   } catch {
