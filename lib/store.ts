@@ -52,8 +52,10 @@ export async function writeData<T>(key: StoreKey, data: T): Promise<void> {
 
   const store = getStore(STORE_NAME);
   await store.setJSON(key, data);
-  // Fire-and-forget rebuild so SSG pages pick up the change.
-  void triggerRebuild();
+  // Await the rebuild trigger so the request doesn't finish before the
+  // POST to the build hook completes. Netlify functions can terminate
+  // immediately on response, which would drop a fire-and-forget fetch.
+  await triggerRebuild();
 }
 
 async function triggerRebuild(): Promise<void> {
