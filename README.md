@@ -1,6 +1,6 @@
-# LG Subscribe Website
+# Subscribe Website
 
-Static marketing site for LG Subscribe Malaysia built with Next.js 15 (App Router) + Tailwind CSS.
+Static marketing site for Subscribe Malaysia built with Next.js 15 (App Router) + Tailwind CSS.
 
 ## Getting started
 
