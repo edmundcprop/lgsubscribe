@@ -4,6 +4,7 @@ import { useMemo, useState, Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { categories, products, type Product } from "@/lib/products";
 import { site, whatsappLink } from "@/lib/site";
+import { pushEvent } from "@/lib/analytics";
 
 type CartItem = {
   id: string;
@@ -242,6 +243,29 @@ function SubscribeForm() {
       alert("Please add at least one product to subscribe.");
       return;
     }
+    const monthlyValue = cart
+      .filter((c) => c.tenure !== "outright")
+      .reduce((s, c) => s + (c.monthlyPrice ?? 0), 0);
+    const outrightValue = cart
+      .filter((c) => c.tenure === "outright")
+      .reduce((s, c) => s + (c.monthlyPrice ?? 0), 0);
+    pushEvent({
+      event: "generate_lead",
+      lead_method: "whatsapp",
+      currency: "MYR",
+      value_monthly: monthlyValue,
+      value_outright: outrightValue,
+      items: cart.map((c) => ({
+        item_id: c.productSlug,
+        item_name: c.productName,
+        item_category: c.productCategory,
+        item_variant: c.tenure,
+        care_tier: c.careTier,
+        price: c.monthlyPrice ?? 0,
+      })),
+      has_email: Boolean(form.email),
+      has_location: Boolean(form.location),
+    });
     window.open(whatsappHref, "_blank", "noopener,noreferrer");
   };
 

@@ -4,9 +4,11 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFab from "@/components/WhatsAppFab";
+import ConsentBanner from "@/components/ConsentBanner";
+import AnalyticsListeners from "@/components/AnalyticsListeners";
 import { site, absoluteUrl } from "@/lib/site";
 
-const GA_ID = "G-KJDZCLBFYG";
+const GTM_ID = "GTM-K7G8ZKWJ";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -85,6 +87,12 @@ export default function RootLayout({
   return (
     <html lang="en-MY">
       <head>
+        <Script id="consent-default" strategy="beforeInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});`}
+        </Script>
+        <Script id="gtm-init" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`}
+        </Script>
         <script
           dangerouslySetInnerHTML={{
             __html: `try{var l=localStorage.getItem('lang');if(l==='ms')document.documentElement.lang='ms';}catch(e){}`,
@@ -100,17 +108,20 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         <Header />
         <main>{children}</main>
         <Footer />
         <WhatsAppFab />
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="ga4-init" strategy="afterInteractive">
-          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`}
-        </Script>
+        <ConsentBanner />
+        <AnalyticsListeners />
       </body>
     </html>
   );
