@@ -8,3 +8,8 @@ out
 
 # Local Netlify folder
 .netlify
+
+# Local-only build/deploy artifacts
+deploy-*.zip
+deno.lock
+tsconfig.tsbuildinfo
